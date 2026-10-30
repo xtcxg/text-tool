@@ -1,0 +1,66 @@
+{
+  "name": "text-tool",
+  "displayName": "Text Tool",
+  "description": "日常开发文本转换工具：python to json、list to sql",
+  "version": "0.0.1",
+  "publisher": "willgliu",
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "textTool.pythonToJson",
+        "title": "python to json",
+        "category": "Text Tool"
+      },
+      {
+        "command": "textTool.listToSql",
+        "title": "list to sql",
+        "category": "Text Tool"
+      },
+      {
+        "command": "textTool.duplicate",
+        "title": "duplicate",
+        "category": "Text Tool"
+      }
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "submenu": "textTool.submenu",
+          "group": "9_textTool"
+        }
+      ],
+      "textTool.submenu": [
+        {
+          "command": "textTool.pythonToJson",
+          "group": "1_transform"
+        },
+        {
+          "command": "textTool.listToSql",
+          "group": "1_transform"
+        },
+        {
+          "command": "textTool.duplicate",
+          "group": "1_transform"
+        }
+      ]
+    },
+    "submenus": [
+      {
+        "id": "textTool.submenu",
+        "label": "text tool"
+      }
+    ]
+  },
+  "scripts": {
+    "lint": "node ./node_modules/eslint"
+  },
+  "devDependencies": {}
+}
